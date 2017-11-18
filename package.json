@@ -1,5 +1,5 @@
 {
-  "name": "midi-player-js",
+  "name": "midi-player-js-tim",
   "version": "1.1.4",
   "description": "Midi parser & player engine for browser or Node. Works well with single or multitrack MIDI files.",
   "main": "module/index.js",
