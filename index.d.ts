@@ -1,4 +1,4 @@
-declare module "midi-player-js" {
+declare module "midi-player-ts" {
     interface MidiEvent {
         name:
             | "Sequence Number"
