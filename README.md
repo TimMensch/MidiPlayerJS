@@ -14,6 +14,11 @@ Additional post-fork improvements include:
 * Add a `yarn.lock` file for consistent builds.
 * Fix Program Change message to work as expected
 
+## Demos
+* [Neopixel Music](https://github.com/robertvorthman/neopixel-music) by robertvorthman @robertvorthman
+* [Autocomposer](http://www.rj-salvador.com/apps/autocomposer/) by RJ Salvador @rjsalvadorr
+* [Simple Browser Player](http://grimmdude.com/MidiPlayerJS/) by Garrett Grimm @grimmdude
+
 ## Getting Started
 Using MidiWriterJS is pretty simple.  Create a new player by instantiating `MidiPlayer.Player` with an event handler to be called for every MIDI event.  Then you can load and play a MIDI file.
 
@@ -50,3 +55,4 @@ Player.on('endOfFile', function() {
 ```
 ## Full API Documentation
 [http://grimmdude.com/MidiPlayerJS/docs/](http://grimmdude.com/MidiPlayerJS/docs/)
+
