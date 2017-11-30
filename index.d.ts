@@ -63,7 +63,7 @@ declare module "midi-player-ts" {
 
         class Track {
             /**
-             * Resets all stateful track informaion used during playback.
+             * Resets all stateful track information used during playback.
              *
              * @returns {this}
              * @memberof Track
