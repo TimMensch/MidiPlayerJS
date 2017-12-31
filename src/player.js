@@ -22,7 +22,8 @@ class Player {
 		this.format;
 		this.setIntervalId = false;
 		this.tracks = [];
-		this.tempo = 120;
+		this.defaultTempo = 120;
+		this.tempo = null;
 		this.startTick = 0;
 		this.tick = 0;
 		this.lastTick = null;
@@ -85,13 +86,13 @@ class Player {
 	}
 
 	/**
-	 * Parses file for necessary information and does a dry run to calculate total length.
+	 * Sets default tempo, parses file for necessary information, and does a dry run to calculate total length.
 	 * Populates this.events & this.totalTicks.
 	 * @return {Player}
 	 */
 	fileLoaded() {
 		if (!this.validate()) throw 'Invalid MIDI file; should start with MThd';
-		return this.getDivision().getFormat().getTracks().dryRun();
+		return this.setTempo(this.defaultTempo).getDivision().getFormat().getTracks().dryRun();
 	}
 
 	/**
@@ -190,7 +191,7 @@ class Player {
 
 					if (dryRun && event && event.hasOwnProperty('name') && event.name === 'Set Tempo') {
 						// Grab tempo if available.
-						this.tempo = event.data;
+						this.setTempo(event.data);
 					}
 
 					if (event && !dryRun) this.emitEvent(event);
@@ -201,6 +202,15 @@ class Player {
 			if (!dryRun) this.triggerPlayerEvent('playing', {tick: this.tick});
 			this.inLoop = false;
 		}
+	}
+
+	/**
+	 * Setter for tempo.
+	 * @param {number} - Tempo in bpm (defaults to 120)
+	 */
+	setTempo(tempo) {
+		this.tempo = tempo;
+		return this;
 	}
 
 	/**
