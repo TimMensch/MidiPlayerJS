@@ -1,6 +1,6 @@
 {
   "name": "midi-player-ts",
-  "version": "2.0.1-tm1",
+  "version": "2.0.1-tm2",
   "description": "Midi parser & player engine for browser or Node. Works well with single or multitrack MIDI files.",
   "main": "module/midiplayer.js",
   "browser": "browser/midiplayer.js",
