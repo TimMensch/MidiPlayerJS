@@ -368,6 +368,13 @@ declare module "midi-player-ts" {
              * - Format 2 which contains one or more independent tracks.
              */
             format: number;
+            /**
+             * An array of the instrument numbers requested by Program Change.
+             *
+             * @type {number[]}
+             * @memberof Player
+             */
+            instruments: number[];
         }
     }
 
